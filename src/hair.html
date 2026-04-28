@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✿ hair accessories · glitterbox ✿</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Abril+Fatface&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          pink: { pale: '#ffeef2', light: '#ffc2d4', DEFAULT: '#ff8ba7', deep: '#ff5c8a' },
+          cream: '#fff4e0',
+          bg: '#faeee7',
+          dark: '#33272a',
+          body: '#594a4e',
+        },
+        fontFamily: {
+          mono: ['"Courier Prime"', 'monospace'],
+          display: ['"Abril Fatface"', 'serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Courier Prime', monospace; }
+  @keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .marquee-inner { animation: scroll 22s linear infinite; }
+  .cd-spin { animation: spin 3s linear infinite; display: inline-block; }
+  .blinky { animation: blink 1.2s step-start infinite; }
+  .blinky:nth-child(2) { animation-delay: .4s; }
+  .blinky:nth-child(3) { animation-delay: .8s; }
+  .cat-tab.active { background: #ff8ba7 !important; color: white !important; border-color: #ff5c8a !important; }
+  .nav-link.active { background: #33272a; color: #ff8ba7; padding: 0 4px; }
+  .item-img { width: 100%; height: 100px; object-fit: contain; display: block; }
+  .shop-item { min-width: 0; }
+  #mobile-nav { display: none; }
+  #mobile-nav.open { display: flex; }
+</style>
+</head>
+<body class="bg-bg text-body text-xs">
+
+<div class="max-w-3xl mx-auto bg-pink-light border-2 border-pink p-1.5 sm:p-2">
+<div class="bg-bg border-2 border-dashed border-pink p-1 sm:p-1.5">
+
+  <div class="bg-pink border border-pink-deep text-center py-2 px-1 mb-1.5">
+    <div class="text-white text-sm tracking-widest mb-0.5 hidden sm:block">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
+    <a href="index.html" class="font-display text-2xl sm:text-3xl text-white no-underline block" style="text-shadow:2px 2px 0 #ff5c8a;letter-spacing:2px;">✿ glitterbox ✿</a>
+    <div class="text-cream text-[9px] sm:text-[10px] tracking-widest lowercase mt-0.5">♡ y2k fashion for iconic girlies ♡</div>
+    <div class="text-white text-xs tracking-widest mt-0.5 hidden sm:block">· · · · · · · · · · · · · ·</div>
+  </div>
+
+  <div class="bg-dark border-t border-b border-pink py-0.5 overflow-hidden mb-1.5">
+    <div class="marquee-inner flex gap-8 whitespace-nowrap text-pink-light text-[9px] sm:text-[10px] tracking-widest lowercase">
+      <span>✦ butterfly clips & bows</span><span>✦ scrunchies & clips</span><span>✦ perfect for your y2k look</span><span>✦ free shipping over ₹999</span><span>✦ use code glitter20</span>
+      <span>✦ butterfly clips & bows</span><span>✦ scrunchies & clips</span><span>✦ perfect for your y2k look</span><span>✦ free shipping over ₹999</span><span>✦ use code glitter20</span>
+    </div>
+  </div>
+
+  <div class="flex sm:hidden justify-between items-center bg-pink-light border border-dashed border-pink px-2 py-1.5 mb-1.5">
+    <span class="text-[11px] font-bold text-pink-deep tracking-wide">✦ navigation</span>
+    <button id="nav-toggle" class="bg-dark text-pink text-[10px] px-2 py-1 border border-pink tracking-wide">☰ menu</button>
+  </div>
+
+  <div id="mobile-nav" class="sm:hidden flex-col gap-0.5 bg-pink-light border border-dashed border-pink p-2 mb-1.5">
+    <a href="index.html" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ home</a>
+    <a href="new arrival.html" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ new arrivals</a>
+    <a href="clothes.html" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ clothes</a>
+    <a href="bag.html" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ bags</a>
+    <a href="shoes.html" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ shoes</a>
+    <a href="jewellery.html" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ jewellery</a>
+    <a href="sunglasses.html" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ sunglasses</a>
+    <a href="hair.html" class="nav-link active block text-[11px] py-1 leading-loose">♡ hair accessories</a>
+    <a href="#" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ sale !!</a>
+    <a href="#" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ lookbook</a>
+    <a href="#" class="block text-body no-underline text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ guestbook</a>
+  </div>
+
+  <div class="flex flex-col sm:grid sm:gap-1.5 sm:mb-1.5 sm:grid-cols-[160px_minmax(0,1fr)]">
+
+    <div class="hidden sm:flex flex-col gap-1.5">
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">✦ navigation</div>
+        <a href="index.html" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ home</a>
+        <a href="new arrival.html" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ new arrivals</a>
+        <a href="clothes.html" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ clothes</a>
+        <a href="bag.html" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ bags</a>
+        <a href="shoes.html" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ shoes</a>
+        <a href="jewellery.html" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ jewellery</a>
+        <a href="sunglasses.html" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ sunglasses</a>
+        <a href="hair.html" class="nav-link active block text-[11px] py-0.5 leading-loose">♡ hair accessories</a>
+        <a href="#" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ sale !!</a>
+        <a href="#" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ lookbook</a>
+        <a href="#" class="nav-link block text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ guestbook</a>
+      </div>
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">🎶 now playing</div>
+        <div class="flex items-start gap-1.5">
+          <span class="cd-spin text-lg">💿</span>
+          <div class="text-[10px] text-body leading-relaxed">
+            <div>avril lavigne</div>
+            <div class="text-pink-deep">complicated</div>
+            <div class="text-[9px] text-gray-400 mt-0.5">▶ 4:05 / 4:30</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">☁ weather</div>
+        <div class="text-center text-[10px] text-body py-1">
+          <span class="block text-2xl mb-0.5">🌸</span>
+          <span class="text-base text-pink-deep font-bold">32°C</span>
+          <div class="text-[9px] tracking-wide mt-0.5">bhubaneswar</div>
+          <div class="text-[9px] text-pink">partly cloudy</div>
+        </div>
+      </div>
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">🌸 blinkies</div>
+        <div class="flex flex-wrap gap-1 mt-0.5">
+          <div class="blinky border border-pink px-1.5 py-0.5 text-[9px] bg-cream text-pink-deep tracking-wide">y2k</div>
+          <div class="blinky border border-pink px-1.5 py-0.5 text-[9px] bg-cream text-pink-deep tracking-wide">bows</div>
+          <div class="blinky border border-pink px-1.5 py-0.5 text-[9px] bg-cream text-pink-deep tracking-wide">clips</div>
+          <div class="blinky border border-pink px-1.5 py-0.5 text-[9px] bg-cream text-pink-deep tracking-wide">spark</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <div class="bg-pink border border-pink-deep text-center py-2 px-2">
+        <div class="font-display text-xl sm:text-2xl text-white" style="text-shadow:1px 1px 0 #ff5c8a;">🦋 hair accessories</div>
+        <div class="text-cream text-[9px] sm:text-[10px] tracking-widest mt-0.5 lowercase">clips · scrunchies · headbands · bows ♡</div>
+      </div>
+
+      <div class="border border-dashed border-pink">
+        <div class="bg-pink-light px-2 py-1 text-[11px] text-body border-b border-dashed border-pink font-bold">✨ hair candy — 9 pieces</div>
+        <div class="flex gap-1 p-1.5 overflow-x-auto flex-nowrap sm:flex-wrap bg-cream border-b border-dashed border-pink" style="scrollbar-width:none;">
+          <a href="#" class="cat-tab active flex-shrink-0 text-[10px] px-2 py-0.5 border border-pink-light bg-white tracking-wide transition-all" data-cat="all">all</a>
+          <a href="#" class="cat-tab flex-shrink-0 text-[10px] px-2 py-0.5 border border-pink-light bg-white tracking-wide transition-all" data-cat="scrunchies">scrunchies</a>
+          <a href="#" class="cat-tab flex-shrink-0 text-[10px] px-2 py-0.5 border border-pink-light bg-white tracking-wide transition-all" data-cat="clips">clips</a>
+          <a href="#" class="cat-tab flex-shrink-0 text-[10px] px-2 py-0.5 border border-pink-light bg-white tracking-wide transition-all" data-cat="bows">bows</a>
+          <a href="#" class="cat-tab flex-shrink-0 text-[10px] px-2 py-0.5 border border-pink-light bg-white tracking-wide transition-all" data-cat="bands">bands</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1.5 p-1.5">
+          <div class="shop-item border border-pink-light bg-white text-center p-1.5 cursor-pointer transition-all hover:border-pink-deep hover:bg-pink-pale" data-cat="clips">
+            <img src="/assests/hair/hair.png" alt="Butterfly Clip" class="item-img" onerror="this.outerHTML='<div class=\'text-4xl py-2\'>🦋</div>'">
+            <div class="font-bold text-[10px] text-dark mt-1 mb-0.5 leading-tight">butterfly clip set</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">clips · glitter</div>
+            <div class="text-[12px] text-pink-deep font-bold">₹549</div>
+          </div>
+          <div class="shop-item border border-pink-light bg-white text-center p-1.5 cursor-pointer transition-all hover:border-pink-deep hover:bg-pink-pale" data-cat="scrunchies">
+            <img src="/assests/hair/hair.png" alt="Velvet Scrunchies" class="item-img" onerror="this.outerHTML='<div class=\'text-4xl py-2\'>🎀</div>'">
+            <div class="font-bold text-[10px] text-dark mt-1 mb-0.5 leading-tight">velvet scrunchie pack</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">scrunchies · pastel</div>
+            <div class="text-[12px] text-pink-deep font-bold">₹449</div>
+          </div>
+          <div class="shop-item border border-pink-light bg-white text-center p-1.5 cursor-pointer transition-all hover:border-pink-deep hover:bg-pink-pale" data-cat="bands">
+            <img src="/assests/hair/hair.png" alt="Pearl Headband" class="item-img" onerror="this.outerHTML='<div class=\'text-4xl py-2\'>👑</div>'">
+            <div class="font-bold text-[10px] text-dark mt-1 mb-0.5 leading-tight">pearl headband</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">headbands · luxe</div>
+            <div class="text-[12px] text-pink-deep font-bold">₹799</div>
+          </div>
+          <div class="shop-item border border-pink-light bg-white text-center p-1.5 cursor-pointer transition-all hover:border-pink-deep hover:bg-pink-pale" data-cat="bows">
+            <img src="/assests/hair/hair.png" alt="Mini Bow Clips" class="item-img" onerror="this.outerHTML='<div class=\'text-4xl py-2\'>🎀</div>'">
+            <div class="font-bold text-[10px] text-dark mt-1 mb-0.5 leading-tight">mini bow clips</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">clips · set of 4</div>
+            <div class="text-[12px] text-pink-deep font-bold">₹499</div>
+          </div>
+          <div class="shop-item border border-pink-light bg-white text-center p-1.5 cursor-pointer transition-all hover:border-pink-deep hover:bg-pink-pale" data-cat="bows">
+            <img src="/assests/hair/hair.png" alt="Sheer Bow Set" class="item-img" onerror="this.outerHTML='<div class=\'text-4xl py-2\'>🎀</div>'">
+            <div class="font-bold text-[10px] text-dark mt-1 mb-0.5 leading-tight">sheer bow set</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">bows · dreamy</div>
+            <div class="text-[12px] text-pink-deep font-bold">₹579</div>
+          </div>
+          <div class="shop-item border border-pink-light bg-white text-center p-1.5 cursor-pointer transition-all hover:border-pink-deep hover:bg-pink-pale" data-cat="clips">
+            <img src="/assests/hair/hair.png" alt="Flower Clips" class="item-img" onerror="this.outerHTML='<div class=\'text-4xl py-2\'>🌸</div>'">
+            <div class="font-bold text-[10px] text-dark mt-1 mb-0.5 leading-tight">flower clip set</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">clips · sweet</div>
+            <div class="text-[12px] text-pink-deep font-bold">₹529</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<script>
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-nav').classList.toggle('open');
+  });
+
+  document.querySelectorAll('.cat-tab').forEach(tab => {
+    tab.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.cat || 'all';
+      document.querySelectorAll('.shop-item').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✿ clothes · glitterbox ✿</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Abril+Fatface&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          pink: { pale: '#ffeef2', light: '#ffc2d4', DEFAULT: '#ff8ba7', deep: '#ff5c8a' },
+          cream: '#fff4e0',
+          bg: '#faeee7',
+          dark: '#33272a',
+          body: '#594a4e',
+        },
+        fontFamily: {
+          mono: ['"Courier Prime"', 'monospace'],
+          display: ['"Abril Fatface"', 'serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Courier Prime', monospace; }
+  @keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .marquee-inner { animation: scroll 22s linear infinite; }
+  .cd-spin { animation: spin 3s linear infinite; display: inline-block; }
+  .blinky { animation: blink 1.2s step-start infinite; }
+  .blinky:nth-child(2) { animation-delay: .4s; }
+  .blinky:nth-child(3) { animation-delay: .8s; }
+  .cat-tab.active { background: #ff8ba7 !important; color: white !important; border-color: #ff5c8a !important; }
+  .nav-link.active { background: #33272a; color: #ff8ba7; }
+  .product-card { transition: all 0.2s; min-width: 0; }
+  .product-card:hover { transform: translateY(-2px); }
+  .grid-sm-stack { grid-template-columns: 1fr !important; }
+
+  @media (max-width: 640px) {
+    .marquee-inner { font-size: 9px; }
+    .product-card { width: 100%; }
+    .nav-link { padding-left: 0.25rem; padding-right: 0.25rem; }
+  }
+
+  /* mobile nav drawer */
+  #mobile-nav { display: none; }
+  #mobile-nav.open { display: flex; }
+</style>
+</head>
+<body class="bg-bg text-body text-xs">
+
+<div class="max-w-3xl mx-auto bg-pink-light border-2 border-pink p-2">
+<div class="bg-bg border-2 border-dashed border-pink p-1.5">
+
+  <!-- TOP BANNER -->
+  <div class="bg-pink border border-pink-deep text-center py-1.5 px-1 mb-1.5">
+    <div class="text-white text-sm tracking-widest mb-0.5">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
+    <a href="index.html" class="font-display text-3xl text-white no-underline" style="text-shadow:2px 2px 0 #ff5c8a;letter-spacing:2px;">✿ glitterbox ✿</a>
+    <div class="text-cream text-[10px] tracking-widest lowercase mt-0.5">♡ y2k fashion for iconic girlies ♡</div>
+    <div class="text-white text-sm tracking-widest mt-0.5">· · · · · · · · · · · · · ·</div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="bg-dark border-t border-b border-pink py-0.5 overflow-hidden mb-1.5">
+    <div class="marquee-inner flex gap-8 whitespace-nowrap text-pink-light text-[10px] tracking-widest lowercase">
+      <span>✦ free shipping over ₹999</span><span>✦ sizes xs to 3xl always in stock</span><span>✦ free returns 14 days</span><span>✦ use code glitter20 for 20% off</span><span>✦ new drop every friday !!</span>
+      <span>✦ free shipping over ₹999</span><span>✦ sizes xs to 3xl always in stock</span><span>✦ free returns 14 days</span><span>✦ use code glitter20 for 20% off</span><span>✦ new drop every friday !!</span>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV TOGGLE -->
+  <div class="flex sm:hidden justify-between items-center bg-pink-light border border-dashed border-pink px-2 py-1.5 mb-1.5">
+    <span class="text-[11px] font-bold text-pink-deep tracking-wide">✦ navigation</span>
+    <button id="nav-toggle" class="bg-dark text-pink text-[10px] px-2 py-1 border border-pink tracking-wide">☰ menu</button>
+  </div>
+
+  <!-- MOBILE NAV DRAWER -->
+  <div id="mobile-nav" class="sm:hidden flex-col gap-0.5 bg-pink-light border border-dashed border-pink p-2 mb-1.5">
+    <a href="index.html" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ home</a>
+    <a href="new arrival.html" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ new arrivals</a>
+    <a href="clothes.html" class="nav-link active block text-[11px] py-1 leading-loose">♡ clothes</a>
+    <a href="bag.html" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ bags</a>
+    <a href="shoes.html" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ shoes</a>
+    <a href="jewellery.html" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ jewellery</a>
+    <a href="sunglasses.html" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ sunglasses</a>
+    <a href="hair.html" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ hair accessories</a>
+    <a href="#" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ sale !!</a>
+    <a href="#" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ lookbook</a>
+    <a href="#" class="nav-link block text-[11px] py-1 leading-loose hover:text-pink-deep hover:underline">♡ guestbook</a>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="flex flex-col sm:grid sm:gap-1.5 sm:mb-1.5 sm:grid-cols-[160px_minmax(0,1fr)]">
+
+    <!-- SIDEBAR -->
+    <div class="hidden sm:flex flex-col gap-1.5">
+
+      <!-- NAV -->
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">✦ navigation</div>
+        <a href="index.html" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ home</a>
+        <a href="new arrival.html" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ new arrivals</a>
+        <a href="clothes.html" class="nav-link active block text-[11px] py-0.5 leading-loose px-1">♡ clothes</a>
+        <a href="bag.html" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ bags</a>
+        <a href="shoes.html" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ shoes</a>
+        <a href="jewellery.html" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ jewellery</a>
+        <a href="sunglasses.html" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ sunglasses</a>
+        <a href="hair.html" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ hair accessories</a>
+        <a href="#" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ sale !!</a>
+        <a href="#" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ lookbook</a>
+        <a href="#" class="nav-link block text-body no-underline text-[11px] py-0.5 leading-loose hover:text-pink-deep hover:underline">♡ guestbook</a>
+      </div>
+
+      <!-- Now Playing -->
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">♪ now playing</div>
+        <div class="flex items-start gap-1.5">
+          <span class="cd-spin text-lg">💿</span>
+          <div class="text-[10px] text-body leading-relaxed">
+            <div>hilary duff</div>
+            <div class="text-pink-deep">what dreams are made of</div>
+            <div class="text-[9px] text-gray-400 mt-0.5">▶ 0:58 / 3:22</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- SORT -->
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">🔍 filter by</div>
+        <div class="flex flex-col gap-1">
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep">
+            <input type="checkbox" class="accent-pink-deep" checked> clothes
+          </label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep">
+            <input type="checkbox" class="accent-pink-deep" checked> bags
+          </label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep">
+            <input type="checkbox" class="accent-pink-deep" checked> shoes
+          </label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep">
+            <input type="checkbox" class="accent-pink-deep" checked> jewellery
+          </label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep">
+            <input type="checkbox" class="accent-pink-deep" checked> sunglasses
+          </label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep">
+            <input type="checkbox" class="accent-pink-deep" checked> hair accessories
+          </label>
+        </div>
+      </div>
+
+
+      <!-- PRICE RANGE -->
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">💰 price range</div>
+        <div class="flex flex-col gap-1">
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep"><input type="radio" name="price" class="accent-pink-deep" checked> all prices</label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep"><input type="radio" name="price" class="accent-pink-deep"> under ₹500</label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep"><input type="radio" name="price" class="accent-pink-deep"> ₹500 – ₹1,000</label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep"><input type="radio" name="price" class="accent-pink-deep"> ₹1,000 – ₹2,000</label>
+          <label class="flex items-center gap-1.5 text-[10px] cursor-pointer hover:text-pink-deep"><input type="radio" name="price" class="accent-pink-deep"> above ₹2,000</label>
+        </div>
+      </div>
+
+      <!-- VISITORS -->
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">👁 visitors</div>
+        <div class="bg-dark text-pink-light font-mono text-[13px] text-center py-1 tracking-widest border border-pink">004821</div>
+        <div class="text-[9px] text-pink text-center mt-0.5 tracking-widest">total visitors</div>
+      </div>
+
+      <!-- BLINKIES -->
+      <div class="bg-pink-light border border-dashed border-pink p-1.5">
+        <div class="text-[10px] text-pink-deep lowercase border-b border-dashed border-pink pb-1 mb-1.5 font-bold tracking-wide">🌸 blinkies</div>
+        <div class="flex flex-wrap gap-1 mt-0.5">
+          <div class="blinky border border-pink px-1.5 py-0.5 text-[9px] bg-cream text-pink-deep tracking-wide">y2k</div>
+          <div class="blinky border border-pink px-1.5 py-0.5 text-[9px] bg-cream text-pink-deep tracking-wide">pink</div>
+          <div class="blinky border border-pink px-1.5 py-0.5 text-[9px] bg-cream text-pink-deep tracking-wide">fashion</div>
+          <div class="blinky border border-pink px-1.5 py-0.5 text-[9px] bg-cream text-pink-deep tracking-wide">cute</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex flex-col gap-1.5">
+
+      <!-- PAGE HEADER -->
+      <div class="bg-pink border border-pink-deep text-center py-2 px-2">
+        <div class="font-display text-2xl text-white" style="text-shadow:1px 1px 0 #ff5c8a;">👗 clothes</div>
+        <div class="text-cream text-[10px] tracking-widest mt-0.5 lowercase">dresses · tops · bottoms · outerwear · sets ♡</div>
+      </div>
+
+      <!-- CATEGORY TABS -->
+      <div class="border border-dashed border-pink">
+        <div class="flex gap-1 p-1.5 flex-wrap bg-cream border-b border-dashed border-pink">
+          <a href="#" class="cat-tab active text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="all">✦ all</a>
+          <a href="#" class="cat-tab text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="dresses">👗 dresses</a>
+          <a href="#" class="cat-tab text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="tops">👚 tops</a>
+          <a href="#" class="cat-tab text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="crop">🩱 crop tops</a>
+          <a href="#" class="cat-tab text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="bottoms">👖 bottoms</a>
+          <a href="#" class="cat-tab text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="skirts">🩳 skirts</a>
+          <a href="#" class="cat-tab text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="outerwear">🧥 outerwear</a>
+          <a href="#" class="cat-tab text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="sets">🥻 sets</a>
+          <a href="#" class="cat-tab text-[10px] px-1.5 py-0.5 border border-pink-light bg-white tracking-wide" data-cat="lounge">🩲 loungewear</a>
+        </div>
+
+        <!-- COUNT BAR -->
+        <div class="bg-[#fffaf8] px-2 py-1 border-b border-dashed border-pink flex justify-between items-center">
+          <span class="text-[10px] text-body" id="item-count">showing 15 pieces</span>
+          <span class="text-[10px] text-pink-deep tracking-wide">✦ free shipping over ₹999</span>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1.5 p-1.5" id="clothes-grid">
+
+          <!-- DRESSES -->
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="dresses">
+            <div class="absolute top-1 left-1 bg-pink border border-pink-deep text-white text-[8px] px-1 py-0.5 font-bold">NEW</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">butterfly mini dress</div>  
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">dresses · floral print</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xl</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹1,299</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="dresses">
+            <div class="absolute top-1 left-1 bg-dark border border-pink text-pink text-[8px] px-1 py-0.5 font-bold">HOT</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">ruffle wrap dress</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">dresses · chiffon</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹1,499</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="dresses">
+            <div class="absolute top-1 left-1 bg-pink border border-pink-deep text-white text-[8px] px-1 py-0.5 font-bold">SALE</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">slip satin dress</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">dresses · satin</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹999 <span class="text-[9px] text-gray-400 line-through ml-0.5">₹1,499</span></div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <!-- TOPS -->
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="tops">
+            <div class="absolute top-1 left-1 bg-dark border border-pink text-pink text-[8px] px-1 py-0.5 font-bold">FAV</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">logo baby tee</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">tops · cotton</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xl</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">2xl</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹599</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="tops">
+            <div class="absolute top-1 left-1 bg-pink border border-pink-deep text-white text-[8px] px-1 py-0.5 font-bold">NEW</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">sheer organza top</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">tops · sheer</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹849</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <!-- CROP TOPS -->
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="crop">
+            <div class="absolute top-1 left-1 bg-dark border border-pink text-pink text-[8px] px-1 py-0.5 font-bold">HOT</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">rhinestone crop top</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">crop tops · embellished</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xl</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹749</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="crop">
+            <div class="absolute top-1 left-1 bg-pink border border-pink-deep text-white text-[8px] px-1 py-0.5 font-bold">NEW</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">glitter tube top</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">crop tops · stretch glitter</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹699</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <!-- BOTTOMS -->
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="bottoms">
+            <div class="absolute top-1 left-1 bg-pink border border-pink-deep text-white text-[8px] px-1 py-0.5 font-bold">SALE</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">low rise bootcut jeans</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">jeans · denim</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">26</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">28</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">30</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">32</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹1,649 <span class="text-[9px] text-gray-400 line-through ml-0.5">₹2,199</span></div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <!-- SKIRTS -->
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="skirts">
+            <div class="absolute top-1 left-1 bg-dark border border-pink text-pink text-[8px] px-1 py-0.5 font-bold">FAV</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">pleated mini skirt</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">skirts · plissé</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹899</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="skirts">
+            <div class="absolute top-1 left-1 bg-pink border border-pink-deep text-white text-[8px] px-1 py-0.5 font-bold">NEW</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">cargo micro skirt</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">skirts · utility</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹999</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <!-- OUTERWEAR -->
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="outerwear">
+            <div class="absolute top-1 left-1 bg-pink border border-pink-deep text-white text-[8px] px-1 py-0.5 font-bold">SALE</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">fuzzy pastel jacket</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">outerwear · faux fur</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xl</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹2,099 <span class="text-[9px] text-gray-400 line-through ml-0.5">₹2,999</span></div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <!-- SETS -->
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="sets">
+            <div class="absolute top-1 left-1 bg-dark border border-pink text-pink text-[8px] px-1 py-0.5 font-bold">HOT</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">wrap co-ord set</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">sets · satin finish</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹1,899</div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+          <!-- LOUNGEWEAR -->
+          <div class="product-card border border-pink-light bg-white text-center p-1.5 cursor-pointer hover:border-pink-deep hover:bg-pink-pale relative" data-cat="lounge">
+            <div class="absolute top-1 left-1 bg-pink border border-pink-deep text-white text-[8px] px-1 py-0.5 font-bold">SALE</div>
+            <span class="block text-4xl my-1 mt-3"><img src="/assests/clothes section/cargo pants.png" alt="cargo pants"></span>
+            <div class="font-bold text-[10px] text-dark mb-0.5 leading-tight">velour tracksuit set</div>
+            <div class="text-[9px] text-pink tracking-wide lowercase mb-1">loungewear · velour</div>
+            <div class="flex justify-center gap-0.5 mb-1 flex-wrap">
+              <span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xs</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">s</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">m</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">l</span><span class="sz border border-pink-light px-1 py-0.5 text-[8px] cursor-pointer">xl</span>
+            </div>
+            <div class="text-[12px] text-pink-deep font-bold">₹1,519 <span class="text-[9px] text-gray-400 line-through ml-0.5">₹1,899</span></div>
+            <button class="add-to-cart bg-pink border border-pink-deep text-white text-[9px] px-2 py-0.5 cursor-pointer mt-1 font-mono tracking-wide hover:bg-pink-deep">+ add to cart</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- VIBE BOX -->
+      <div class="border border-dashed border-pink">
+        <div class="bg-pink-light px-2 py-1 text-[11px] text-body border-b border-dashed border-pink">💕 style notes</div>
+        <div class="px-2 py-1.5 bg-[#fffaf8] text-[11px] leading-loose text-body">
+          <span class="text-pink-deep">trending rn:</span> low rise everything · baby tees · pleated skirts · sheer tops no· velour sets · slip dresses 🌸
+          <br>
+          <span class="text-pink-deep">how to style:</span> pair the butterfly dress with platform boots and a micro bag for full y2k mode ✦
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="text-center py-1.5 text-[10px] text-pink border-t border-dashed border-pink mt-1.5 tracking-widest">
+    <div class="text-[12px] text-pink-light tracking-widest">✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
+    <div class="my-0.5">✿ made with love in 2003 ✿ · glitterbox fashion · all rights reserved</div>
+    <div class="text-[9px] text-pink-light tracking-widest">best viewed in internet explorer 6 · 800×600 resolution</div>
+    <div class="text-[12px] text-pink-light tracking-widest mt-0.5">· · · · · · · · · · ·</div>
+  </div>
+
+</div>
+</div>
+
+<script>
+  // Category filter tabs
+  const tabs = document.querySelectorAll('.cat-tab');
+  const cards = document.querySelectorAll('.product-card');
+  const countEl = document.getElementById('item-count');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      e.preventDefault();
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.cat;
+      let count = 0;
+      cards.forEach(card => {
+        const show = cat === 'all' || card.dataset.cat === cat;
+        card.style.display = show ? '' : 'none';
+        if (show) count++;
+      });
+      countEl.textContent = `showing ${count} piece${count !== 1 ? 's' : ''}`;
+    });
+  });
+
+  // Size toggle
+  document.querySelectorAll('.sz').forEach(s => {
+    s.addEventListener('click', () => {
+      const on = s.dataset.on === 'true';
+      s.dataset.on = !on;
+      s.style.background = !on ? '#ff8ba7' : '';
+      s.style.color = !on ? 'white' : '';
+      s.style.borderColor = !on ? '#ff8ba7' : '';
+    });
+  });
+
+  // Add to cart
+  document.querySelectorAll('.add-to-cart').forEach(b => {
+    b.addEventListener('click', () => {
+      const orig = b.textContent;
+      b.textContent = '✓ added !!';
+      b.style.background = '#ff5c8a';
+      setTimeout(() => { b.textContent = orig; b.style.background = ''; }, 1500);
+    });
+  });
+
+  // Mobile nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-nav').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
